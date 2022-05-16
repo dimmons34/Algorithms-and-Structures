@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void dec(const int num, string &snum){
+
+    if (num%2==0)
+        snum+="0";
+    else snum+="1";
+    if ((num/2)!=0) dec(num/2, snum);
+    else return;
+}
+int PowSimple(int base, int power){
+   return (pow (base, power));
+}
+int PowRec(int base, int power)
+{
+    return power == 1 ? base : base * PowRec(base, power - 1);
+}
+int Deg(int a, int b){
+  if (b <= 0){
+      return 1;
+  }
+    if (b % 2 == 0){
+        return Deg( a = (a*a), b= (b / 2));
+    } else {
+        return a * Deg(a, b = (b - 1));
+    }
+
+ }
+
+int main(){
+  //ex1   // string snum;
+  //ex1   // dec(57, snum);
+  //ex1   // cout<<snum<<endl;
+  //ex2   //cout << PowSimple(2,3) << endl;
+  //ex3 // cout << PowRec(2,4) << endl;
+  //ex4   // cout << Deg(2,4) << endl;
+  //ex5 не смог
+}
+
+
